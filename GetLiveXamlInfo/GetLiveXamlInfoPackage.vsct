@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h" />
+  <Extern href="vsshlids.h" />
+
+  <Commands package="guidGetLiveXamlInfoPackage">
+
+    <Menus>
+      <Menu guid="guidGetLiveXamlInfoPackageCmdSet" id="GetLiveXamlInfoMenu" type="Menu" priority="0x0700">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS" />
+        <Strings>
+          <ButtonText>Live XAML Info</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+    
+    <Groups>
+      <Group guid="guidGetLiveXamlInfoPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+        <!--<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />-->
+        <Parent guid="guidGetLiveXamlInfoPackageCmdSet" id="GetLiveXamlInfoMenu" />
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidGetLiveXamlInfoPackageCmdSet" id="cmdidGetLocalPropertiesCommand" priority="0x0200" type="Button">
+        <Parent guid="guidGetLiveXamlInfoPackageCmdSet" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>Get Local Properties</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidGetLiveXamlInfoPackageCmdSet" id="cmdidGetAllPropertiesCommand" priority="0x0300" type="Button">
+        <Parent guid="guidGetLiveXamlInfoPackageCmdSet" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>Get All Properties</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidGetLiveXamlInfoPackageCmdSet" id="cmdidGetElementOutlineCommand" priority="0x0100" type="Button">
+        <Parent guid="guidGetLiveXamlInfoPackageCmdSet" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>Get Element Outline</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidGetLiveXamlInfoPackage" value="{42ff7b4b-0ed9-407b-aa25-3397606f6268}" />
+
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidGetLiveXamlInfoPackageCmdSet" value="{77dfe2ed-bc26-43e2-9151-4ea51066d15e}">
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="GetLiveXamlInfoMenu" value="0x1030" />
+      <IDSymbol value="4129" name="cmdidGetLocalPropertiesCommand" />
+      <IDSymbol value="4130" name="cmdidGetAllPropertiesCommand" />
+      <IDSymbol value="256" name="cmdidGetElementOutlineCommand" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

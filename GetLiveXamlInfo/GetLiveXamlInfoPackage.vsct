@@ -17,7 +17,6 @@
     
     <Groups>
       <Group guid="guidGetLiveXamlInfoPackageCmdSet" id="MyMenuGroup" priority="0x0600">
-        <!--<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />-->
         <Parent guid="guidGetLiveXamlInfoPackageCmdSet" id="GetLiveXamlInfoMenu" />
       </Group>
     </Groups>
@@ -45,15 +44,13 @@
   </Commands>
 
   <Symbols>
-    <!-- This is the package guid. -->
     <GuidSymbol name="guidGetLiveXamlInfoPackage" value="{42ff7b4b-0ed9-407b-aa25-3397606f6268}" />
 
-    <!-- This is the guid used to group the menu commands together -->
     <GuidSymbol name="guidGetLiveXamlInfoPackageCmdSet" value="{77dfe2ed-bc26-43e2-9151-4ea51066d15e}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="GetLiveXamlInfoMenu" value="0x1030" />
       <IDSymbol value="4129" name="cmdidGetLocalPropertiesCommand" />
-      <IDSymbol value="4130" name="cmdidGetAllPropertiesCommand" />
+      <IDSymbol value="4130" name="cmdidGetAllPropertiesCommand" />s
       <IDSymbol value="256" name="cmdidGetElementOutlineCommand" />
     </GuidSymbol>
   </Symbols>

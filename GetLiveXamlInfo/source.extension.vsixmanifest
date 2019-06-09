@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="GetLiveXamlInfo.743f1a34-0085-458e-8c74-5f10b7b10551" Version="0.1" Language="en-US" Publisher="Matt Lacey" />
-        <DisplayName>GetLiveXamlInfo</DisplayName>
-        <Description xml:space="preserve">Empty VSIX Project.</Description>
+        <Identity Id="GetLiveXamlInfo.743f1a34-0085-458e-8c74-5f10b7b10551" Version="0.2" Language="en-US" Publisher="Matt Lacey" />
+        <DisplayName>Get Live XAML Info</DisplayName>
+        <Description xml:space="preserve">Gets information from the Live Visual Tree and Live Property Explorer</Description>
         <Preview>true</Preview>
     </Metadata>
     <Installation>

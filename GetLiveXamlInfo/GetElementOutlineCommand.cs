@@ -26,7 +26,7 @@ namespace GetLiveXamlInfo
         /// <summary>
         /// Command menu group (command set GUID).
         /// </summary>
-        public static readonly Guid CommandSet = new Guid("fb7b5cf9-da4e-4e24-963d-e0a30f02acdd");
+        public static readonly Guid CommandSet = new Guid("77dfe2ed-bc26-43e2-9151-4ea51066d15e");
 
         /// <summary>
         /// VS Package that provides this command, not null.
@@ -92,23 +92,20 @@ namespace GetLiveXamlInfo
         /// <param name="e">Event args.</param>
         private async void Execute(object sender, EventArgs e)
         {
-            ThreadHelper.ThrowIfNotOnUIThread();
-            string message = string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.GetType().FullName);
-            string title = "GetElementOutlineCommand";
+            System.Windows.Forms.Cursor previousCursor = System.Windows.Forms.Cursor.Current;
 
-            // TODO: indicate busy
-            var details = await this.GetXamlInfoAsync(this.ServiceProvider, DetailLevel.Outline);
+            try
+            {
+                System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor;
 
-            await OutputPane.Instance.WriteStringsAsync(details);
+                var details = await this.GetXamlInfoAsync(this.ServiceProvider, DetailLevel.Outline);
 
-            // Show a message box to prove we were here
-            VsShellUtilities.ShowMessageBox(
-                this.package,
-                message,
-                title,
-                OLEMSGICON.OLEMSGICON_INFO,
-                OLEMSGBUTTON.OLEMSGBUTTON_OK,
-                OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
+                await OutputPane.Instance.WriteStringsAsync(details);
+            }
+            finally
+            {
+                System.Windows.Forms.Cursor.Current = previousCursor;
+            }
         }
     }
 }

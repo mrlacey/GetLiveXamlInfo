@@ -74,6 +74,8 @@ namespace GetLiveXamlInfo
                 await this.WriteAsync(msg);
             }
 
+            await this.WriteAsync(string.Empty);
+
             await this.ActivateAsync();
         }
     }

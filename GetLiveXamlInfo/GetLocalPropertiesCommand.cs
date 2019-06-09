@@ -90,22 +90,20 @@ namespace GetLiveXamlInfo
         /// <param name="e">Event args.</param>
         private async void Execute(object sender, EventArgs e)
         {
-            string message = string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.GetType().FullName);
-            string title = "GetLocalPropertiesCommand";
+            System.Windows.Forms.Cursor previousCursor = System.Windows.Forms.Cursor.Current;
 
-            // TODO: indicate busy
-            var details = await this.GetXamlInfoAsync(this.ServiceProvider, DetailLevel.Locals);
+            try
+            {
+                System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor;
 
-            await OutputPane.Instance.WriteStringsAsync(details);
+                var details = await this.GetXamlInfoAsync(this.ServiceProvider, DetailLevel.Local);
 
-            // Show a message box to prove we were here
-            VsShellUtilities.ShowMessageBox(
-                this.package,
-                message,
-                title,
-                OLEMSGICON.OLEMSGICON_INFO,
-                OLEMSGBUTTON.OLEMSGBUTTON_OK,
-                OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
+                await OutputPane.Instance.WriteStringsAsync(details);
+            }
+            finally
+            {
+                System.Windows.Forms.Cursor.Current = previousCursor;
+            }
         }
     }
 }

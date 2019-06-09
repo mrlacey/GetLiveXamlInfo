@@ -7,7 +7,7 @@ namespace GetLiveXamlInfo
     public enum DetailLevel
     {
         Outline,
-        Locals,
+        Local,
         All,
     }
 }

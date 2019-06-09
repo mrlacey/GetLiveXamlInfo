@@ -4,6 +4,7 @@
         <Identity Id="GetLiveXamlInfo.743f1a34-0085-458e-8c74-5f10b7b10551" Version="0.2" Language="en-US" Publisher="Matt Lacey" />
         <DisplayName>Get Live XAML Info</DisplayName>
         <Description xml:space="preserve">Gets information from the Live Visual Tree and Live Property Explorer</Description>
+        <MoreInfo>https://github.com/mrlacey/GetLiveXamlInfo</MoreInfo>
         <Preview>true</Preview>
     </Metadata>
     <Installation>

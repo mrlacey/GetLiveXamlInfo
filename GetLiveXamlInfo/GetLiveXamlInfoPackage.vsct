@@ -50,7 +50,7 @@
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="GetLiveXamlInfoMenu" value="0x1030" />
       <IDSymbol value="4129" name="cmdidGetLocalPropertiesCommand" />
-      <IDSymbol value="4130" name="cmdidGetAllPropertiesCommand" />s
+      <IDSymbol value="4130" name="cmdidGetAllPropertiesCommand" />
       <IDSymbol value="256" name="cmdidGetElementOutlineCommand" />
     </GuidSymbol>
   </Symbols>

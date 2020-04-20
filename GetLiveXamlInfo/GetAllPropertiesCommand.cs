@@ -90,7 +90,9 @@ namespace GetLiveXamlInfo
         /// </summary>
         /// <param name="sender">Event sender.</param>
         /// <param name="e">Event args.</param>
+#pragma warning disable VSTHRD100 // Avoid async void methods
         private async void Execute(object sender, EventArgs e)
+#pragma warning restore VSTHRD100 // Avoid async void methods
         {
             System.Windows.Forms.Cursor previousCursor = System.Windows.Forms.Cursor.Current;
 

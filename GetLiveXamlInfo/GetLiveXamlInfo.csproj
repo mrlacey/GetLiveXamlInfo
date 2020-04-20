@@ -66,6 +66,7 @@
     <VSCTCompile Include="GetLiveXamlInfoPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
     </VSCTCompile>
+    <None Include=".editorconfig" />
     <None Include="Key.snk" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
@@ -76,8 +77,18 @@
     <Reference Include="Microsoft.VisualStudio.DesignTools.Diagnostics">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\CommonExtensions\Microsoft\XamlDiagnostics\Microsoft.VisualStudio.DesignTools.Diagnostics.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.DesignTools.DiagnosticsBase">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\PrivateAssemblies\Microsoft.VisualStudio.DesignTools.DiagnosticsBase.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.DesignTools.RuntimeHost">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\PrivateAssemblies\Microsoft.VisualStudio.DesignTools.RuntimeHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.DesignTools.RuntimeHostBase">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\PrivateAssemblies\Microsoft.VisualStudio.DesignTools.RuntimeHostBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.DesignTools.Utility, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\PrivateAssemblies\Microsoft.VisualStudio.DesignTools.Utility.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.Platform.WindowManagement, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -98,8 +109,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.200" ExcludeAssets="runtime" />
-    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.1.3128" />
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.205" ExcludeAssets="runtime">
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.5.2044">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="StyleCop.Analyzers">
       <Version>1.1.118</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
